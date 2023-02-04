@@ -1,0 +1,16 @@
+{
+    "name": "QQImageGenerator",
+    "main": "index.html",
+    "window":{
+        "width": 800,
+        "height": 500,
+        "position": "center",
+        "title": "企鹅合影生成器",
+        "icon": "assets/icon.png",
+        "min_width": 800,
+        "min_height": 500
+    },
+    "webkit": {  
+        "page-cache": false  
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html oncontextmenu="event.preventDefault()" ondragstart="event.preventDefault()">
+    <head>
+        <title>企鹅合影生成器</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="assets/icon.png">
+        <link rel="stylesheet" href="assets/index.css">
+    </head>
+    <body>
+        <header>
+            <div class="left"><b>企鹅合影生成器</b><span>Developed By NLR-DevTeam</span></div>
+            <div class="right">
+                <img src="assets/rpp/1.png" onclick="webOpen('https://grass.nlrdev.top')">
+                <img src="assets/rpp/2.png" onclick="webOpen('https://starxn.com/aff/LLBHWTEJ')">
+                <img src="assets/rpp/3.png" onclick="webOpen('https://remote.vnisoft.top')">
+            </div>
+        </header>
+        
+        <main>
+            <!-- 加载页面 -->
+            <page id="loading">
+                <svg width="16" height="16"><style>@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes fillunfill{0%{stroke-dashoffset:32.3}50%{stroke-dashoffset:0}to{stroke-dashoffset:-31.9}}@keyframes rot{0%{transform:rotate(0deg)}to{transform:rotate(-360deg)}}@keyframes colors{0%,to{stroke:#1E9FFF}}</style><g style="animation-duration:1568.63ms;animation-iteration-count:infinite;animation-name:rotate;animation-timing-function:linear;transform-origin:50% 50%;width:16px;height:16px"><path fill="none" d="M8 1.125A6.875 6.875 0 1 1 1.125 8" stroke-width="2.25" stroke-linecap="round" style="animation-duration:1333ms,5332ms,5332ms;animation-fill-mode:forwards;animation-iteration-count:infinite,infinite,infinite;animation-name:fillunfill,rot,colors;animation-play-state:running,running,running;animation-timing-function:cubic-bezier(.4,0,.2,1),steps(4),linear;transform-origin:50% 50%" stroke-dasharray="32.4" stroke-dashoffset="32.4"></path></g></svg>
+                <div>正在处理</div>
+            </page>
+            <!-- 登陆页面 -->
+            <page id="login">
+                <h1>请先登录</h1>
+                <div>
+                    请在弹出的窗口中完成登录，出现 QQ 群管理后可关闭页面，并点击下方按钮<br>
+                    本产品将严格保护您的隐私，全程仅会与腾讯服务器进行通讯
+                </div>
+                <button onclick="window.open('https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=715030901&daid=73&hide_close_icon=1&pt_no_auth=1&s_url=https%3A%2F%2Fqun.qq.com%2Fmember.html%3Fclient%3Dtim%23gid%3D673145197')">打开登录窗口</button>
+                <button onclick="submitLogin()" style="margin-left:10px;">我已完成登录 ></button>
+            </page>
+            <!-- 选群页面 -->
+            <page id="groups">
+                <div id="groupList"></div>
+                <button onclick="confirmSelecedGroups()">撅好了 ></button>
+            </page>
+            <!-- 配置页面 -->
+            <page id="config">
+                <h1>合影配置</h1>
+                <div><div title="合影图片的宽度，单位为像素，请确保高度与宽度皆不超过 15,000 像素">合影宽度</div><input id="configPagewidth" type="number" value="2000"></div>
+                <div><div title="单个头像的宽度，单位为像素，请确保高度与宽度皆不超过 15,000 像素">头像宽度</div><input id="configImagewidth" type="number" value="40"></div>
+                <div><div title="选择头像的形状，可设为圆形、圆角方形或正方形">头像形状</div><select id="configShape"><option value="0">正方形</option><option value="10">圆角方形</option><option value="50">圆形</option></select></div>
+                <div><div title="每个头像与头像间的间隔，单位为像素">头像间隔</div><input id="configPadding" type="number" value="2"></div>
+                <button onclick="switchPage('groups')">< 返回重新选群</button>                
+                <button onclick="getMemberList(0,0);switchPage('waiting')" style="margin-left:10px;">开始生成合影 ></button>
+            </page>
+            <!-- 等待页面 -->
+            <page id="waiting">
+                <svg width="16" height="16"><style>@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes fillunfill{0%{stroke-dashoffset:32.3}50%{stroke-dashoffset:0}to{stroke-dashoffset:-31.9}}@keyframes rot{0%{transform:rotate(0deg)}to{transform:rotate(-360deg)}}@keyframes colors{0%,to{stroke:#1E9FFF}}</style><g style="animation-duration:1568.63ms;animation-iteration-count:infinite;animation-name:rotate;animation-timing-function:linear;transform-origin:50% 50%;width:16px;height:16px"><path fill="none" d="M8 1.125A6.875 6.875 0 1 1 1.125 8" stroke-width="2.25" stroke-linecap="round" style="animation-duration:1333ms,5332ms,5332ms;animation-fill-mode:forwards;animation-iteration-count:infinite,infinite,infinite;animation-name:fillunfill,rot,colors;animation-play-state:running,running,running;animation-timing-function:cubic-bezier(.4,0,.2,1),steps(4),linear;transform-origin:50% 50%" stroke-dasharray="32.4" stroke-dashoffset="32.4"></path></g></svg>
+                <div>正在合影：<span id="waitStatus">正在初始化</span></div>
+            </page>
+            <!-- 完成页面 -->
+            <page id="finish">
+                <h1>合影成功</h1>
+                <div>您可以在下方下载合影图片</div>
+                <a href id="downloadLink" download="合影_.jpg"><button>下载合影图片</button></a>
+            </page>
+        </main>
+
+        <div id="shots"></div>
+    </body>
+    <script src="assets/index.js"></script>
+</html>
