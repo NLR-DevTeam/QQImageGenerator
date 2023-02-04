@@ -15,3 +15,4 @@
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/63778412/216762172-f6fe64df-1594-4e41-bc7e-7dd78e18c8e5.png)
+![image](https://user-images.githubusercontent.com/63778412/216762767-740196c0-f7b0-4eda-8679-915a1459040f.png)
