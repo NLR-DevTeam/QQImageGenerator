@@ -7,7 +7,7 @@
 - **安全性 /** 您可阅读代码或进行抓包，使用全程仅与腾讯服务器进行通讯，绝不连接我们的任何一台服务器，安全有保障。
 
 ## Downloads
-- Windows：https://disk.nlrdev.top/s/2AIa
+- Windows：https://www.123pan.com/s/VevLVv-HiXjv.html
 - 其他平台可自行下载 NW.js SDK 后使用本程序源码运行
 
 ## Why NW.js ?
